@@ -1,4 +1,4 @@
-
+import { Link } from "react-scroll";
 
 
 const HeroSection = () => {
@@ -17,7 +17,17 @@ const HeroSection = () => {
                 <br /> Dolorum, quas. Amet soluta assumenda cum?
               </p>
             </div>
-            <button className="btn btn-primary">Get In Touch</button>
+            <button className="btn btn-primary"> <Link
+            
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            to="Contact"
+            
+          >
+            Get in Touch
+          </Link></button>
           </div>
           <div className="hero--section--img">
             <img src="./img/hero_img.png" alt="Hero Section" />

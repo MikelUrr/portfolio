@@ -5,6 +5,7 @@ import MyPortfolio from "../MyPortfolio";
 import Testimonial from "../Testimonial";
 import ContactMe from "../ConctacMe";
 import Footer from "../Footer";
+import Timeline from "../Timeline";
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <AboutMe />
             <MyPortfolio />
             <Testimonial />
+            <Timeline />
             <ContactMe />
             <Footer />
         </>
