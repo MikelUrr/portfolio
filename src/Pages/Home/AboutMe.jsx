@@ -11,15 +11,13 @@ const AboutMe= () =>{
               <p className="section--title">About</p>
               <h1 className="skills-section--heading">About Me</h1>
               <p className="hero--section-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                officiis sit debitis omnis harum sed veniam quasi dicta accusamus
-                recusandae? Voluptatem, reprehenderit alias? Eligendi aperiam
-                tempora numquam sint odit optio.
+              I'm Mikel a Full Stack Developer with a year of coding experience and a background as a Radio Network Optimizer in the mobile telephony sector. My coding journey, sparked by a passion for problem-solving, has been an exciting transition from the world of telecommunications to crafting efficient code.
               </p>
               <p className="hero--section-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-                officiis sit debitis omnis harum sed veniam quasi dicta accusamus
-                recusandae?
+              My professional history in optimizing radio networks has instilled in me a practical mindset that I bring to software development. As you explore my portfolio, you'll discover how I seamlessly integrate my telecommunications background into meaningful and user-friendly solutions.
+              </p>
+              <p className="hero--section-description">
+Let's collaborate and turn ideas into impactful realities. I'm eager to contribute my skills to create something extraordinary together.
               </p>
             </div>
           </div>

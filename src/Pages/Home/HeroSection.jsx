@@ -13,8 +13,8 @@ const HeroSection = () => {
                 Developer
               </h1>
               <p className="hero--section-description">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                <br /> Dolorum, quas. Amet soluta assumenda cum?
+              Passionate about contributing my skills to meaningful projects. 
+                <br /> Explore my portfolio to see how I turn my love for coding into practical solutions. Let's create something great together.🚀
               </p>
             </div>
             <button className="btn btn-primary"> <Link

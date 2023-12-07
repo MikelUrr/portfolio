@@ -4,13 +4,13 @@
         "id": "1",
         "src": "./img/product-chain-1.png",
         "title": "Front-End",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "description": "Deep knowledge of HTML, CSS, and React, allowing me to craft engaging and intuitive user interfaces."
       },
       {
         "id": "2",
         "src": "./img/tag-1.png",
         "title": "Back-End",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "description": "Familiar with Node.js and Express, I'm delving into PHP to expand my back-end capabilities."
       },
       {
         "id": "3",

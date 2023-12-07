@@ -749,6 +749,7 @@ select::-ms-expand {
   margin: 0 auto;
   padding: 15px 0;
   z-index: -100;
+  background-color: var(--bg-shade);
 }
 
 .timeline::after {
