@@ -14,7 +14,7 @@ const Home = () => {
             <MySkills />
             <AboutMe />
             <MyPortfolio />
-            <Testimonial />
+            
             <Timeline />
             <ContactMe />
             <Footer />

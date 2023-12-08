@@ -3,6 +3,9 @@ import React from 'react';
 
 const TimelineComponent = () => {
   return (
+    <section className='timeline--section' >
+      <p className="sub--title">From Zero to Pro</p>
+          <h2 className="sections--heading">My Dev journey</h2>
     <section className="timeline">
     <div className="timelinecontainer left">
       <div className="date">15 Dec</div>
@@ -64,6 +67,7 @@ const TimelineComponent = () => {
         </p>
       </div>
     </div>
+  </section>
   </section>
   )
 };

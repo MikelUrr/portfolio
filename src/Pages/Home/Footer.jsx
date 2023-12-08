@@ -63,17 +63,17 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="testimonial"
-                className="text-md"
-              >
-                Testimonials
-              </Link>
+            <Link
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to="timeline--section"
+              className="navbar--content"
+            >
+              My Journey
+            </Link>
             </li>
           </ul>
         </div>
@@ -146,7 +146,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/mikel-urrestarazu"
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
