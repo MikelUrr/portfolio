@@ -1,37 +1,92 @@
-
+import React, { useState } from 'react';
 
 const ContactMe = () => {
+  const [formData, setFormData] = useState({});
+  const [submitMessage, setSubmitMessage] = useState(null);
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('http://localhost:3668/contactme', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+       
+        setFormData({});
+      
+        setSubmitMessage('Request sent. Thank you for contacting me!');
+      } else {
+        console.error('Error al enviar el formulario');
+        setSubmitMessage('Error sending request. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error inesperado:', error);
+      setSubmitMessage('Unexpected error. Please try again later.');
+    }
+  };
+  const handleTextareaChange = (e) => {
+    setFormData({
+      ...formData,
+      message: e.target.value,
+    });
+  };
+
   return (
     <section id="Contact" className="contact--section">
       <div>
         <p className="sub--title">Get In Touch</p>
         <h2>Contact Me</h2>
         <p className="text-lg">
-  Whether you have a project in mind or just want to say hello, <br />feel free to drop me a message below. I look forward to hearing from you!
-</p>
+          Whether you have a project in mind or just want to say hello, <br />
+          feel free to drop me a message below. I look forward to hearing from you!
+        </p>
       </div>
-      <form className="contact--form--container">
+      <form className="contact--form--container" onSubmit={handleSubmit}>
+       
+        {submitMessage && <p className={submitMessage ? 'success-message' : 'error-message'}>{submitMessage}</p>}
         <div className="container">
+         
           <label htmlFor="first-name" className="contact--label">
             <span className="text-md">First Name</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="first-name"
-              id="first-name"
+              name="firstName"
+              id="firstname"
               required
+              value={formData.firstName || ''}
+              onChange={handleInputChange}
             />
           </label>
+
+         
           <label htmlFor="last-name" className="contact--label">
             <span className="text-md">Last Name</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="last-name"
-              id="last-name"
+              name="lastName"
+              id="lastname"
               required
+              value={formData.lastName || ''}
+              onChange={handleInputChange}
             />
           </label>
+
+          
           <label htmlFor="email" className="contact--label">
             <span className="text-md">Email</span>
             <input
@@ -39,23 +94,35 @@ const ContactMe = () => {
               className="contact--input text-md"
               name="email"
               id="email"
-              required
+              value={formData.email || ''}
+              onChange={handleInputChange}
             />
           </label>
+
+          
           <label htmlFor="phone-number" className="contact--label">
-            <span className="text-md">phone-number</span>
+            <span className="text-md">Phone Number</span>
             <input
               type="number"
               className="contact--input text-md"
-              name="phone-number"
-              id="phone-number"
-              required
+              name="phoneNumber"
+              id="phoneNumber"
+              value={formData.phoneNumber || ''}
+              onChange={handleInputChange}
             />
           </label>
         </div>
-        <label htmlFor="choode-topic" className="contact--label">
+
+      
+        <label htmlFor="choose-topic" className="contact--label">
           <span className="text-md">Choose a topic</span>
-          <select id="choose-topic" className="contact--input text-md">
+          <select
+            id="choose-topic"
+            name="topic"
+            className="contact--input text-md"
+            value={formData.topic || ''}
+            onChange={handleInputChange}
+          >
             <option>Select One...</option>
             <option>Web Development Projects</option>
             <option>Software Engineering Opportunities</option>
@@ -68,6 +135,8 @@ const ContactMe = () => {
             <option>Other</option>
           </select>
         </label>
+
+       
         <label htmlFor="message" className="contact--label">
           <span className="text-md">Message</span>
           <textarea
@@ -75,18 +144,26 @@ const ContactMe = () => {
             id="message"
             rows="8"
             placeholder="Type your message..."
+            value={formData.message || ''}
+            onChange={handleTextareaChange}
           />
         </label>
-        <label htmlFor="checkboc" className="checkbox--label">
+
+        
+        <label htmlFor="checkbox" className="checkbox--label">
           <input type="checkbox" required name="checkbox" id="checkbox" />
           <span className="text-sm">I accept the terms</span>
         </label>
+
+     
         <div>
-          <button className="btn btn-primary contact--form--btn">Submit</button>
+          <button type="submit" className="btn btn-primary contact--form--btn">
+            Submit
+          </button>
         </div>
       </form>
     </section>
   );
-}
+};
 
 export default ContactMe;
