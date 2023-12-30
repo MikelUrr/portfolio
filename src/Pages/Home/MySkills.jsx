@@ -1,6 +1,7 @@
 import data from "../../data/index.json"
 
 const MySkills= () =>{
+  
     return (
         <section className="skills--section" id="mySkills">
           <div className="portfolio--container">

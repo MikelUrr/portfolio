@@ -2,11 +2,51 @@ import { Link } from "react-scroll";
 import React from "react";
 
 function Footer() {
+  // Function to handle the click event
+  const handleClick = (event) => {
+    // Get the current time
+    const currentTime = new Date().toISOString();
+    
+let url=""
+    // Get the URL of the clicked element
+    if(!event.currentTarget.href){
+     url = event.currentTarget.text
+    } else {
+       url = event.currentTarget.href;
+    }
+    
+    
+  
+    const userAgent = window.navigator
+    
+    // Make the POST request
+    fetch("your_post_url_here", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        time: currentTime,
+        clickedUrl: url,
+        userinfo: userAgent,
+        componentInfo:"footer",
+
+      }),
+    })
+      .then((response) => {
+        // Handle the response if needed
+        console.log("POST request successful", response);
+      })
+      .catch((error) => {
+        // Handle errors if any
+        console.error("Error making POST request", error);
+      });
+  };
   return (
     <footer className="footer--container">
       <div className="footer--link--container">
         <div>
-          <img src="./img/logo.svg" alt="Logoipsum" />
+          <img src="./img/chain.svg" alt="Logoipsum" />
         </div>
         <div className="footer--items">
           <ul>
@@ -19,6 +59,7 @@ function Footer() {
                 duration={500}
                 to="heroSection"
                 className="text-md"
+                onClick={handleClick}
               >
                 Home
               </Link>
@@ -32,6 +73,7 @@ function Footer() {
                 duration={500}
                 to="MyPortfolio"
                 className="text-md"
+                onClick={handleClick}
               >
                 Portfolio
               </Link>
@@ -45,6 +87,7 @@ function Footer() {
                 duration={500}
                 to="AboutMe"
                 className="text-md"
+                onClick={handleClick}
               >
                 About Me
               </Link>
@@ -58,6 +101,7 @@ function Footer() {
                 duration={500}
                 to="Contact"
                 className="text-md"
+                onClick={handleClick}
               >
                 Contact
               </Link>
@@ -71,6 +115,7 @@ function Footer() {
               duration={500}
               to="timeline--section"
               className="navbar--content"
+              onClick={handleClick}
             >
               My Journey
             </Link>
@@ -85,6 +130,7 @@ function Footer() {
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleClick}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -106,6 +152,7 @@ function Footer() {
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleClick}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -129,6 +176,7 @@ function Footer() {
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleClick}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -150,6 +198,7 @@ function Footer() {
                 className="navbar--content"
                 target="_blank"
                 rel="noreferrer"
+                onClick={handleClick}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +221,7 @@ function Footer() {
       </div>
       <hr className="divider" />
       <div className="footer--content--container">
-        <p className="footer--content">Made with 💖 by Mikel</p>
+        <p className="footer--content">Mikel's Portfolio - Under Construction</p>
         <div className="footer--social--icon">
           <ul>
             <li>
@@ -184,6 +233,7 @@ function Footer() {
                 duration={500}
                 to="Privacy_Policy"
                 className="text-sm"
+                
               >
                 Privacy Policy
               </Link>

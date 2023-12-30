@@ -2,27 +2,27 @@
     "skills": [
       {
         "id": "1",
-        "src": "./img/product-chain-1.png",
-        "title": "Front-End",
-        "description": "Deep knowledge of HTML, CSS, and React, allowing me to craft engaging and intuitive user interfaces."
+        "src": "./img/tag-1.png",
+        "title": "Databases",
+        "description": "Navigating the world of databases, adept in both MySQL and MongoDB, to manage data effectively and optimize query performance."
       },
       {
         "id": "2",
-        "src": "./img/tag-1.png",
-        "title": "Back-End",
-        "description": "Familiar with Node.js and Express, I'm delving into PHP to expand my back-end capabilities."
+        "src": "./img/feather-pen-1.png",
+        "title": "Frontend",
+        "description": "Passionate about crafting engaging user interfaces using HTML, CSS, JavaScript, and leveraging React for dynamic web experiences."
       },
       {
         "id": "3",
-        "src": "./img/feather-pen-2.png",
-        "title": "UI & UX Design",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "src": "./img/feather-pen-1.png",
+        "title": "Backend",
+        "description": "Developing server-side applications with Node.js and Express, with a focus on creating efficient RESTful APIs."
       },
       {
         "id": "4",
-        "src": "./img/feather-pen-1.png",
-        "title": "Webflow Development",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "src": "./img/product-chain-1.png",
+        "title": "Deployment",
+        "description": "Exploring the essentials of continuous integration, deployment, and explicit Dockerization for reliable and efficient application delivery."
       }
     ],
     "portfolio": [

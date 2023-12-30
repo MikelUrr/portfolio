@@ -1,5 +1,9 @@
 /* Global CSS */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -155,14 +159,22 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 85.333px;
+    padding: 15px 85.333px 15px 15px;
     background: var(--white);
     box-shadow: 0px 5.333px 80px 0 rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
   }
+.logo{
+  display: flex;
+  align-items: center;
+  color: var(--primary);
+}
+
+
   .navbar--items > ul {
     list-style: none;
     display: flex;
@@ -233,6 +245,13 @@ h1 {
   .hero--section--img > img {
     width: 100%;
     height: 100%;
+    border-radius: 10%;
+  }
+  .hero--buttons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-right: 40px;
   }
   /* Hero Section Style Ends */
 
@@ -317,6 +336,11 @@ h1 {
   .about--section--img > img {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
+  }
+  .cvabout:hover,
+.cvabout:active{
+    color:red
   }
   /* About Us Ends */
  
@@ -536,6 +560,7 @@ select::-ms-expand {
     align-items: flex-start;
     gap: 42.667px;
     text-decoration: none;
+    cursor: pointer;
   }
   .footer--items ul > li > a {
     text-decoration: none;
@@ -605,6 +630,9 @@ select::-ms-expand {
   }
   
   @media only screen and (max-width: 1200px) {
+    :root{
+      max-width: fit-content;
+    }
     .btn-outline-primary {
       display: none;
     }
@@ -618,6 +646,8 @@ select::-ms-expand {
     .footer--content {
       text-align: center;
     }
+   
+    
     .skills--section--container,
     .about--section,
     .portfolio--section--container,
@@ -633,6 +663,19 @@ select::-ms-expand {
     .hero--section--content,
     .hero--section--content--box {
       align-items: center;
+    }
+    .text-lg{
+      display: none;
+    }
+    .sub--title{
+text-align: center;
+    }
+   
+    .sub--title h2{
+      text-align: center;
+    }
+    button.btn.btn-primary{
+      margin-left: 25px;
     }
     .portfolio--container-box {
       gap: 30px;
@@ -716,7 +759,7 @@ select::-ms-expand {
       align-items: center;
       justify-content: center;
       background-color: rgba(255, 255, 255);
-      top: -20rem;
+      top: -25rem;
       left: 0;
       width: 100%;
       transition: all ease-in-out 0.4s;
@@ -751,19 +794,23 @@ select::-ms-expand {
     .nav__hamburger.active :nth-child(3) {
       transform: rotate(-45deg) translate(0.45rem, -0.1875rem);
     }
+    .logo h2 {
+      display: none;
+    }
   }
   
   /* Responsive Screens Ends*/
   .timeline--section {
     display: flex;
-    padding: 84.3px 84.3px;
+    padding: 120px 85px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 25px;
+    gap: 30px;
     background-color: var(--bg-shade);
-    z-index: -100;
+    z-index: 900;
     position: relative;
   }
+  
 .timeline {
   top:35px;
   position: relative;
@@ -905,12 +952,69 @@ select::-ms-expand {
   line-height: 22px;
   color: #000000;
 }
+.smalllink{
+  display: none;
+}
 
-@media (max-width: 767.98px) {
+@media only screen and (max-width: 767px){
+  body{
+    width: 100%;
+  }
+  .skills--section--card{
+   display: flex;
+   align-items: center;
+   text-align: center;
+   overflow: scroll;
+  }
+  h3.skills--section--title{
+    text-align: center;
+    padding-left: 52px;
+    
+    
+  }
+ 
+  .skills--section--card:hover{
+    border-bottom: none;
+  }
+  .skills--section--description{
+    font-size: 12px;
+    overflow: hidden;
+  }
   .timeline::after {
     left: 90px;
   }
-
+  .smalllink{
+    display: block;
+  }
+  
+  .hero--section-description{
+    font-size: 15px;
+    text-align:justify;
+  }
+  .timelinecontainer .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: normal;
+    color: var(--primary);
+  }
+  .about--section--img > img {
+   display: none;
+  }
+.timeline--section{
+  background-color: transparent;
+}
+.hero--section{
+  background-color: transparent;
+}
+.about--section{
+  margin-top: 50px;
+}
+.section--title{
+  display: none;
+}
+.skills-section--heading{
+  font-size: 40px;
+}
   .timelinecontainer {
     width: 100%;
     padding-left: 120px;
@@ -931,6 +1035,10 @@ select::-ms-expand {
     left: 100px;
     border-color: transparent #006E51 transparent transparent;
   }
+  .content p {display: none;}
+.timeline--section{
+  padding: 12px 8px;
+}
 
   .timelinecontainer.left .date,
   .timelinecontainer.right .date {
@@ -948,6 +1056,33 @@ select::-ms-expand {
   .timelinecontainer.right .content {
     padding: 30px 30px 30px 90px;
     border-radius: 500px 0 0 500px;
+    margin-right: 33px;
+  }
+  .footer--container{
+    background-color: transparent;
   }
 }
 
+@media  (max-width: 397px) {
+
+.timelinecontainer .content h2 {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    font-weight:lighter;
+    color: var(--primary);}
+}
+
+
+@media  (max-width: 420px) {
+.contact--section {
+  padding-left: 60px;
+  padding-right: 85px;
+}
+
+}
+@media  (max-width: 380px) {
+  .contact--section {
+    padding-left: 40px;
+    padding-right: 85px;
+  }
+}  

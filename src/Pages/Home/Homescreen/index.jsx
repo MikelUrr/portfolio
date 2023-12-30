@@ -13,8 +13,7 @@ const Home = () => {
             <HeroSection />
             <MySkills />
             <AboutMe />
-            <MyPortfolio />
-            
+            <MyPortfolio />  
             <Timeline />
             <ContactMe />
             <Footer />

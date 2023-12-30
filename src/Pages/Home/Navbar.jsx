@@ -29,10 +29,50 @@ useEffect(() => {
   }
 }, []);
 
+const handleClick = (event) => {
+  // Get the current time
+  const currentTime = new Date().toISOString();
+  
+let url=""
+  // Get the URL of the clicked element
+  if(!event.currentTarget.href){
+   url = event.currentTarget.text
+  } else {
+     url = event.currentTarget.href;
+  }
+  
+  console.log(url)
+
+  const userAgent = window.navigator
+  
+  // Make the POST request
+  fetch("your_post_url_here", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      time: currentTime,
+      clickedUrl: url,
+      userinfo: userAgent,
+      componentInfo:"Navbar",
+
+    }),
+  })
+    .then((response) => {
+      // Handle the response if needed
+      console.log("POST request successful", response);
+    })
+    .catch((error) => {
+      // Handle errors if any
+      console.error("Error making POST request", error);
+    });
+};
+
 return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img src="./img/logo.svg" alt="Mikel Urrestarazu" />
+      <div className="logo">
+        <img src="./img/chain.svg" alt="Mikel Urrestarazu"  /><h2>Mikel Urrestarazu</h2>
       </div>
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
@@ -60,7 +100,10 @@ return (
           </li>
           <li>
             <Link
-              onClick={closeMenu}
+              onClick={(event) => {
+                closeMenu(event);
+                handleClick(event);
+              }}
               activeClass="navbar--active-content"
               spy={true}
               smooth={true}
@@ -68,13 +111,17 @@ return (
               duration={500}
               to="skills--section"
               className="navbar--content"
+              
             >
              MySkills
             </Link>
           </li>
           <li>
             <Link
-              onClick={closeMenu}
+              onClick={(event) => {
+                closeMenu(event);
+                handleClick(event);
+              }}
               activeClass="navbar--active-content"
               spy={true}
               smooth={true}
@@ -88,7 +135,10 @@ return (
           </li>
           <li>
             <Link
-              onClick={closeMenu}
+              onClick={(event) => {
+                closeMenu(event);
+                handleClick(event);
+              }}
               activeClass="navbar--active-content"
               spy={true}
               smooth={true}
@@ -103,22 +153,29 @@ return (
 
           <li>
             <Link
-              onClick={closeMenu}
+              onClick={(event) => {
+                closeMenu(event);
+                handleClick(event);
+              }}
               activeClass="navbar--active-content"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
-              to="timeline--section"
+              to="timeline"
               className="navbar--content"
             >
-              My Journey
+              My journey
             </Link>
           </li>
+
         </ul>
       </div>
       <Link
-        onClick={closeMenu}
+        onClick={(event) => {
+          closeMenu(event);
+          handleClick(event);
+        }}
         activeClass="navbar--active-content"
         spy={true}
         smooth={true}

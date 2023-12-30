@@ -4,6 +4,7 @@ const ContactMe = () => {
   const [formData, setFormData] = useState({});
   const [submitMessage, setSubmitMessage] = useState(null);
 
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -15,14 +16,17 @@ const ContactMe = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3668/contactme', {
+      const VITE_BACKEND_HOST = import.meta.env.VITE_BACKEND_HOST;
+      const response = await fetch(`${VITE_BACKEND_HOST}/contactme`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
+        credentials: 'include',
       });
 
+     
       if (response.ok) {
        
         setFormData({});
@@ -48,15 +52,15 @@ const ContactMe = () => {
     <section id="Contact" className="contact--section">
       <div>
         <p className="sub--title">Get In Touch</p>
-        <h2>Contact Me</h2>
+        <h2>Contact Me </h2>
         <p className="text-lg">
           Whether you have a project in mind or just want to say hello, <br />
-          feel free to drop me a message below. I look forward to hearing from you!
+          feel free to drop me a message below. I look forward to hearing from you! 
         </p>
       </div>
       <form className="contact--form--container" onSubmit={handleSubmit}>
        
-        {submitMessage && <p className={submitMessage ? 'success-message' : 'error-message'}>{submitMessage}</p>}
+        {submitMessage && <p className={submitMessage==='Request sent. Thank you for contacting me!' ? 'success-message' : 'error-message'}>{submitMessage}</p>}
         <div className="container">
          
           <label htmlFor="first-name" className="contact--label">
@@ -110,6 +114,7 @@ const ContactMe = () => {
               value={formData.phoneNumber || ''}
               onChange={handleInputChange}
             />
+            
           </label>
         </div>
 
